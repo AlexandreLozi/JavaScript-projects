@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+p {
+  color: white;
+  font-size: 40px;
+  font-family: Helvetica, sans-serif;
+}
+
+.result {
+  margin: 10px, 10px;
+}
+.num-button {
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  font-size: 30px;
+  font-family: helvetica, sans-serif;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+.fun-button {
+  color: white;
+  border: none;
+  border-radius: 60px;
+  font-size: 30px;
+  background-color: orange;
+  font-family: helvetica, sans-serif;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+.especial {
+  padding: 15px 28px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="icon" type="image/png" href="calculator.png" />
+    <link rel="stylesheet" href="09calculator.css" />
+  </head>
+  <body>
+    <p class="displayCalculo" class="result"></p>
+    <p>
+      <button onclick="calculo('1')" class="num-button">1</button>
+
+      <button onclick="calculo('2')" class="num-button">2</button>
+
+      <button onclick="calculo('3')" class="num-button">3</button>
+
+      <button onclick="calculo(' + ')" class="fun-button">+</button>
+    </p>
+
+    <p>
+      <button onclick="calculo (`4`);" class="num-button">4</button>
+
+      <button onclick="calculo(`5`)" class="num-button">5</button>
+
+      <button onclick="calculo (`6`)" class="num-button">6</button>
+
+      <button onclick="calculo(' - ')" class="fun-button">-</button>
+    </p>
+
+    <p>
+      <button onclick="calculo (`7`)" class="num-button">7</button>
+
+      <button onclick="calculo(`8`)" class="num-button">8</button>
+
+      <button onclick="calculo (`9`)" class="num-button">9</button>
+
+      <button onclick="calculo (` * `)" class="fun-button">*</button>
+    </p>
+
+    <p>
+      <button onclick="calculo(`0`);" class="num-button">0</button>
+
+      <button onclick="calculo(` . `)" class="num-button especial">.</button>
+
+      <button
+        onclick="calculation = eval(calculation);
+        displayCalculo(); 
+        localStorage.setItem('calculation', calculation)"
+        class="num-button"
+      >
+        =
+      </button>
+
+      <button onclick="calculo (` / `)" class="fun-button especial">/</button>
+    </p>
+
+    <p>
+      <button
+        onclick="
+        calculation = '';
+        displayCalculo();
+        localStorage.setItem('calculation', calculation)
+      "
+        class="num-button"
+      >
+        Clear
+      </button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+      displayCalculo();
+
+      function calculo(value) {
+        calculation += value;
+        displayCalculo();
+        localStorage.setItem("calculation", calculation);
+      }
+
+      function displayCalculo() {
+        document.querySelector(".displayCalculo").innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>
